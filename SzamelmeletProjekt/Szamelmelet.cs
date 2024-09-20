@@ -52,13 +52,28 @@ public static class Szamelmelet
     public static List<int> GetPrimszamok(int kezdet, int veg)
     {
         // Prímszámok adott intervallumban
-        return new List<int>();
+        List<int> primek = new List<int>();
+        for(int i = kezdet; i <= veg; i++)
+        {
+            if (PrimszamE(i))
+            {
+                primek.Add(i);
+            }
+        }
+        return primek;
     }
 
     public static List<int> GetPrimszamokHatarig(int veg)
     {
-        // Prímszámok adott határig
-        return new List<int>();
+        List<int> primek = new List<int>();
+        for(int i = 0;i <= veg; i++)
+        {
+            if (PrimszamE(i))
+            {
+                primek.Add(i);
+            }
+        }
+        return primek;  
     }
     public static int GetOsztokOsszege()
     { return 0; }
