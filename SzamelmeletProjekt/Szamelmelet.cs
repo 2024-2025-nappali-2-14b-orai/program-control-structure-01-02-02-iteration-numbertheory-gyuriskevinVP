@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace SzamelmeletProjekt;
 
 public static class Szamelmelet
@@ -38,7 +40,7 @@ public static class Szamelmelet
         return osztok;
     }
 
-    public static string KiLista(List<int> list)
+    public static string ListaToString(List<int> list)
     {
         return string.Join(", ", list);
     }
@@ -65,18 +67,19 @@ public static class Szamelmelet
 
     public static List<int> GetPrimszamokHatarig(int veg)
     {
-        List<int> primek = new List<int>();
-        for(int i = 0;i <= veg; i++)
-        {
-            if (PrimszamE(i))
-            {
-                primek.Add(i);
-            }
-        }
-        return primek;  
+        return GetPrimszamok(1, veg);
     }
-    public static int GetOsztokOsszege()
-    { return 0; }
+    public static int GetOsztokOsszege(int szam)
+    {
+        //int osszeg = 0;
+        //List<int> lista = GetOsztok(szam);
+        //for(int i = 0; i <= lista.Count; i++)
+        //{
+        //    osszeg += lista[i];
+        //}
+        //return osszeg;
+        return GetOsztok(szam).Sum();
+    }
 
     public static bool TokeletesE(int szam)
     {
